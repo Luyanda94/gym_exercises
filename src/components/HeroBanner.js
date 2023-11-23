@@ -13,7 +13,10 @@ const HeroBanner = () => {
         Level Up with<br/>
            Coach Lue
         </Typography>
-        <Typography>
+        <Typography fontWeight={700} 
+        sx={{ fontSize: { lg: '10px', xs: '10px'}
+        }}
+        > 
           Your dedicated fitness Trainer. With my expertise in<br/> 
           exercise and nutrition. I am here to help Your<br/>
           reach your fitness goals. Let us start this journey<br/>

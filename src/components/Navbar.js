@@ -1,31 +1,146 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Stack } from '@mui/material'
-
-import logo from 'C:\\Users\\Luyanda\\Desktop\\gym_exercises\\src\\assets\\images\\purple logo.png'
+import { Stack, Button } from '@mui/material';
+import logo from '../assets/images/purple logo.png';
 
 const Navbar = () => {
   return (
-    <Stack direction='row' justifyContent="space-around" sx={{ gap: {sm:'122px', xs: '40px'}, mt: { sm: '32px', xs: '20px'}, justifyContent: 'none'}} px= "20px">
+    <Stack
+      direction="row"
+      justifyContent="space-between"
+      alignItems="center"
+      sx={{
+        gap: '20px',
+        mt: '20px',
+        px: '20px',
+        backgroundColor: '#3B82F6', // Blue background color
+        paddingY: '15px',
+        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+        borderRadius: '10px', // Rounded corners
+      }}
+    >
+      {/* Stylish logo */}
       <Link to="/">
-        <img src={logo} alt="logo" style={{ width: '90px', height: '90px', margin: ' 0 20px' }} />
-
+        <img
+          src={logo}
+          alt="Your Logo Alt Text"
+          style={{
+            width: '80px',
+            height: '80px',
+            borderRadius: '50%',
+            objectFit: 'cover',
+          }}
+        />
       </Link>
+
+      {/* Navigation links */}
       <Stack
-        direction='row'
-        gap='40px'
-        fontSize='24px'
-        alignItems='flex-end'
+        direction="row"
+        gap="30px"
+        fontSize={{ xs: '16px', sm: '20px' }}
+        alignItems="center"
+        justifyContent="center"
+        sx={{
+          '@media (max-width: 600px)': {
+            flexDirection: 'column',
+            alignItems: 'center',
+          },
+        }}
       >
-        <Link to="/" style={{ textDecoration:'none', color: "#3A1212", borderBottom: '3px solid #FF2625'}}>Home</Link>
-        <a href="#exercises" style={{textDecoration: 'none', color:'#3A1212'}}>Exercises</a>
-        <a href="#about" style={{textDecoration: 'none', color:'#3A1212'}}>About</a>
-        <a href="#admin" style={{textDecoration: 'none', color:'#3A1212'}}>Admin</a>
-        <a href="#join" style={{textDecoration: 'none', color:'#3A1212'}}>Join</a>
-        <a href="#contact" style={{textDecoration: 'none', color:'#3A1212'}}>Contact</a>
+        <Button
+          component={Link}
+          to="/"
+          sx={{
+            textDecoration: 'none',
+            color: '#fff',
+            padding: '10px',
+            borderRadius: '5px',
+            transition: 'background-color 0.3s ease-in-out',
+            '&:hover': {
+              backgroundColor: '#4B5563', // Darker background on hover
+            },
+          }}
+        >
+          Home
+        </Button>
+        <Button
+          href="#exercises"
+          sx={{
+            textDecoration: 'none',
+            color: '#fff',
+            padding: '10px',
+            borderRadius: '5px',
+            transition: 'background-color 0.3s ease-in-out',
+            '&:hover': {
+              backgroundColor: '#4B5563',
+            },
+          }}
+        >
+          Exercises
+        </Button>
+        <Button
+          href="#about"
+          sx={{
+            textDecoration: 'none',
+            color: '#fff',
+            padding: '10px',
+            borderRadius: '5px',
+            transition: 'background-color 0.3s ease-in-out',
+            '&:hover': {
+              backgroundColor: '#4B5563',
+            },
+          }}
+        >
+          About
+        </Button>
+        <Button
+          href="#admin"
+          sx={{
+            textDecoration: 'none',
+            color: '#fff',
+            padding: '10px',
+            borderRadius: '5px',
+            transition: 'background-color 0.3s ease-in-out',
+            '&:hover': {
+              backgroundColor: '#4B5563',
+            },
+          }}
+        >
+          Admin
+        </Button>
+        <Button
+          href="#join"
+          sx={{
+            textDecoration: 'none',
+            color: '#fff',
+            padding: '10px',
+            borderRadius: '5px',
+            transition: 'background-color 0.3s ease-in-out',
+            '&:hover': {
+              backgroundColor: '#4B5563',
+            },
+          }}
+        >
+          Join
+        </Button>
+        <Button
+          href="#contact"
+          sx={{
+            textDecoration: 'none',
+            color: '#fff',
+            padding: '10px',
+            borderRadius: '5px',
+            transition: 'background-color 0.3s ease-in-out',
+            '&:hover': {
+              backgroundColor: '#4B5563',
+            },
+          }}
+        >
+          Contact
+        </Button>
       </Stack>
     </Stack>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

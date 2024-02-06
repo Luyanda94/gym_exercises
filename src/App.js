@@ -9,7 +9,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 const App = () => {
-  return (
+  return ( 
     <Box width="400px" sx={{ width: { xl: '1488px'}}} m="auto">
     <Navbar/>
     <Routes>
@@ -19,6 +19,6 @@ const App = () => {
     <Footer/>
     </Box> 
     )
-}
+} 
 
 export default App

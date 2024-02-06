@@ -6,4 +6,4 @@ const searchExercises = () => {
   )
 }
 
-export default searchExercises
+export default searchExercises 

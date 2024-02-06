@@ -142,6 +142,12 @@ const HeroBanner = () => {
         >
           Join
         </AnimatedButton>
+        <Button
+        href="#join"
+        style={{
+          ...buttonSpring,
+          backgroundColor: '#00acc1',
+        }}>
       </BoxWithDebug>
     </AnimatedContainer>
   );

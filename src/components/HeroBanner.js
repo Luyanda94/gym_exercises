@@ -146,5 +146,5 @@ const HeroBanner = () => {
     </AnimatedContainer>
   );
 };
-
+<Typography></Typography>
 export default HeroBanner;

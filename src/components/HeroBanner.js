@@ -146,5 +146,7 @@ const HeroBanner = () => {
     </AnimatedContainer>
   );
 };
-<Typography> Level Up</Typography>
+<Typography
+> 
+Level Up</Typography>
 export default HeroBanner;

@@ -146,14 +146,5 @@ const HeroBanner = () => {
     </AnimatedContainer>
   );
 };
-<Typography
-fontWeight={600}
-color="#ff2625"
-sx={{
-    opacity: 0.1,
-    display: {lg: 'block', xs: 'none'
-  }}
-  > 
-Level Up<
-/Typography>
+<Typography> Level Up</Typography>
 export default HeroBanner;

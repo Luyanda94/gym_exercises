@@ -13,7 +13,7 @@ const Home = () => {
       <HeroBanner />
       <searchExercises />       
       <Exercises />
-
+      
 
     </Box>
   )

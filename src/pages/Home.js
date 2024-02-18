@@ -17,7 +17,10 @@ const Home = () => {
       <HeroBanner />
       <searchExercises />       
       <Exercises />
-      
+      <About />
+      <Admin /> 
+      <Join />
+      <Contact />     
 
     </Box>
   )

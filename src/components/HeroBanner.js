@@ -105,14 +105,7 @@ const HeroBanner = () => {
           Level Up with<br />
           Coach Lue
         </AnimatedTypography>
-        <Box style={{ position: 'relative', width: '100%' }}>
-          <AnimatedImage
-            src={HeroBannerImage}
-            alt="Coach Lue"
-            className="hero-banner-img"
-            style={buttonSpring}
-          />
-        </Box>
+        
         <AnimatedTypography
           fontWeight={700}
           sx={{ fontSize: { lg: '20px', xs: '10px' } }}
@@ -124,6 +117,28 @@ const HeroBanner = () => {
           reach your fitness goals. Let us start this journey<br />
           together.
         </AnimatedTypography>
+
+        <Box style={{ position: 'relative', width: '100%' }}>
+          <AnimatedImage
+            src={HeroBannerImage}
+            alt="Coach Lue"
+            className="hero-banner-img"
+            style={{
+              ...buttonSpring,
+              borderRadius: '10px', // Add any additional styling here
+            }}
+          />
+        </Box>
+            <Typography
+            fontWeight= {600}
+            color="#ff2625"
+            sx={{
+              opacity: 0.1,
+              display: { lg: 'block', xs: 'none' },
+            }}
+            fontSize="150px">
+              EXERCISE WITH US
+            </Typography>
         <AnimatedButton
           href="#admin"
           style={{
@@ -133,6 +148,7 @@ const HeroBanner = () => {
         >
           Admin
         </AnimatedButton>
+
         <AnimatedButton
           href="#admin"
           style={{
@@ -146,5 +162,5 @@ const HeroBanner = () => {
     </AnimatedContainer>
   );
 };
-<Typography> Level Up</Typography>
+
 export default HeroBanner;

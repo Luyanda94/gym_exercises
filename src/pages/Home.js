@@ -5,7 +5,7 @@ import { Box } from '@mui/material';
 import Exercises from '../components/Exercises';
 import HeroBanner from '../components/HeroBanner';
 // eslint-disable-next-line no-unused-vars
-import searchExercises from '../components/searchExercises';
+import SearchExercises from '../components/SearchExercises';
 import About from '../components/About';
 import Admin from '../components/Admin';
 import Join from '../components/Join';
@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <Box>
       <HeroBanner />
-      <searchExercises />       
+      <SearchExercises />       
       <Exercises />
       <About />
       <Admin /> 

@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 
+'react';
+import { Box, Buton, Stack, Textfield, 
+Typography } from '@mui/material';
 
 const searchExercises = () => {
   return (
-    <div>searchExercises</div>
+    <Stack>
+
+    </Stack>
   )
 }
 

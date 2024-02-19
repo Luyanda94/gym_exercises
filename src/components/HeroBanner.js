@@ -65,10 +65,11 @@ const AnimatedButton = styled(animated(Button))`
 `;
 
 const AnimatedImage = styled(animated.img)`
-  width: 100%;
-  max-width: 200px;
+  width: 600px;
+  max-width: 100%;
+  height:750px;
   border-radius: 10px;
-  object-fit: cover; /* Ensure the image covers its container while maintaining aspect ratio */
+  object-fit: cover; 
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
   &:hover {

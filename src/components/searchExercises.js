@@ -25,7 +25,7 @@ const SearchExercises = () => {
       height="76px" 
       value="" 
       onChange={(e) => {}} 
-      placeholder="Search Exercises"
+      placeholder="Search Exercises..."
       type="Text"
       />
       </Box>

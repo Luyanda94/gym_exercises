@@ -57,8 +57,9 @@ const SearchExercises = () => {
           <AnimatedTextField
             sx={{
               fontWeight: '700',
-              borderRadius: '40px',
+              borderRadius: '10px',
               backgroundColor: '#fff',
+              width: { lg: '1000px', xs: '350'},
               '& .MuiInputBase-input': {
                 padding: '15px',
               },
@@ -71,7 +72,14 @@ const SearchExercises = () => {
           />
           <Button className="search-btn" 
             sx={{
-              bgcolor: '#00acc1'
+              bgcolor: '#00acc1',
+              color: '#fff',
+              textTranform: 'none',
+              width: { lg: '175px', xs: '80px'},
+              fontSize: { lg:'20px', xs: '14px'},
+              height: '56px',
+              right: '0'
+              
             }}
           variant="contained" 
           >

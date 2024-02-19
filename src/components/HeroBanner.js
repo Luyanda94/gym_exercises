@@ -145,16 +145,18 @@ const HeroBanner = () => {
           style={{
             ...buttonSpring,
             backgroundColor: '#00acc1',
+            color: '#fff'
           }}
         >
           Admin
         </AnimatedButton>
-
+            
         <AnimatedButton
           href="#admin"
           style={{
             ...buttonSpring,
             backgroundColor: '#00acc1',
+            color: '#fff'
           }}
         >
           Join

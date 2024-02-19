@@ -126,7 +126,7 @@ const HeroBanner = () => {
             className="hero-banner-img"
             style={{
               ...buttonSpring,
-              borderRadius: '10px', // Add any additional styling here
+              borderRadius: '10px', 
             }}
           />
         </Box>
@@ -144,7 +144,7 @@ const HeroBanner = () => {
           href="#admin"
           style={{
             ...buttonSpring,
-            backgroundColor: '#7e57c2',
+            backgroundColor: '#00acc1',
           }}
         >
           Admin

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Box, TextField, Stack, Typography, Button } from '@mui/material';
 import styled from 'styled-components';
-import { exerciseOptions, fetchdata } from '../utils/fecthData';
+import { exerciseOptions, fetchData } from '../utils/fecthData';
 import HorizontalScrollbar from './AboutHorizontalScrollbar';
 
 const SearchContainer = styled(Stack)`
@@ -39,44 +39,50 @@ const FancySearchButton = styled(Button)`
   }
 `;
 
-const fetchExercisesData = async () => {
-  try {
-    const bodyPartsData = await fetchData(
-      'https://exerciseapi3.p.rapidapi.com/exercise/name/push%20up',
-      exerciseOptions
-    );
-    setBodyParts(['all', ...bodyPartsData]);
-  } catch (error) {
-    console.error('Error fetching body parts data:', error);
-    // Handle the error, e.g., show a user-friendly message or retry.
-    // For now, you can set an empty array as a fallback value.
-    setBodyParts([]);
-  }
-};
+const SearchExercises = () => {
+  const [search, setSearch] = useState('');
+  const [exercises, setExercises] = useState([]);
+  const [bodyParts, setBodyParts] = useState([]);
 
-const handleSearch = async () => {
-  try {
-    const apiUrl = `https://exerciseapi3.p.rapidapi.com/exercise/name/${encodeURIComponent(search)}`;
-    const exercisesData = await fetchData(apiUrl, exerciseOptions);
+  useEffect(() => {
+    const fetchInitialData = async () => {
+      try {
+        const bodyPartsData = await fetchData(
+          'https://exerciseapi3.p.rapidapi.com/exercise/name/push%20up',
+          exerciseOptions
+        );
+        setBodyParts(['all', ...bodyPartsData]);
+      } catch (error) {
+        console.error('Error fetching initial data:', error);
+        // Handle the error, e.g., show a user-friendly message or retry.
+        // For now, you can set an empty array as a fallback value.
+        setBodyParts([]);
+      }
+    };
 
-    const searchResults = exercisesData.filter(
-      (exercise) =>
-        exercise.name.toLowerCase().includes(search) ||
-        exercise.target.toLowerCase().includes(search) ||
-        exercise.equipment.toLowerCase().includes(search) ||
-        exercise.bodyPart.toLowerCase().includes(search)
-    );
+    fetchInitialData();
+  }, []); // Empty dependency array ensures this effect runs only once on mount
 
-    setSearch('');
-    setExercises(searchResults);
-  } catch (error) {
-    console.error('Error fetching exercises data:', error);
-    // Handle the error, e.g., show a user-friendly message or retry.
-    // For now, you can set an empty array as a fallback value.
-    setExercises([]);
-  }
-};
+  const handleSearch = async () => {
+    try {
+      const apiUrl = `https://exerciseapi3.p.rapidapi.com/exercise/name/${encodeURIComponent(search)}`;
+      const exercisesData = await fetchData(apiUrl, exerciseOptions);
 
+      const searchResults = exercisesData.filter(
+        (exercise) =>
+          exercise.name.toLowerCase().includes(search) ||
+          exercise.target.toLowerCase().includes(search) ||
+          exercise.equipment.toLowerCase().includes(search) ||
+          exercise.bodyPart.toLowerCase().includes(search)
+      );
+
+      setSearch('');
+      setExercises(searchResults);
+    } catch (error) {
+      console.error('Error fetching exercises data:', error);
+      setExercises([]); // Handle the error by setting an empty array as a fallback value
+    }
+  };
 
   return (
     <SearchContainer alignItems="center" justifyContent="center">
@@ -115,7 +121,7 @@ const handleSearch = async () => {
               bgcolor: '#00acc1',
               color: '#fff',
               textTransform: 'none',
-              width: { lg: '175px', xs: '80px' }, 
+              width: { lg: '175px', xs: '80px' },
               fontSize: { lg: '20px', xs: '14px' },
               height: '56px',
               right: '0',
@@ -129,13 +135,10 @@ const handleSearch = async () => {
       </Box>
 
       <Box sx={{ position: 'relative', width: '100%', p: '20px' }}>
-  <HorizontalScrollbar data={bodyParts} />
-</Box>
+        <HorizontalScrollbar data={bodyParts} />
+      </Box>
     </SearchContainer>
-
-
-
   );
-  
+};
 
 export default SearchExercises;

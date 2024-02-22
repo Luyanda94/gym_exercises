@@ -38,6 +38,16 @@ const FancySearchButton = styled(Button)`
 `;
 
 const SearchExercises = () => {
+  const [search, setSearch] = useState('')
+
+  const handleSearch = async () => {
+    if (search) {
+      // const exercisesData = await fetchData
+      //();
+    }
+  }
+}
+  
   return (
     <SearchContainer alignItems="center" justifyContent="center">
       <Box width="100%">
@@ -65,8 +75,9 @@ const SearchExercises = () => {
               },
             }}
             height="86px"
-            value=""
-            onChange={(e) => {}}
+            value={search}
+            onChange={(e) => setSearch(e.target.
+              value.toLowerCase())}
             placeholder="Search Exercises..."
             type="text"
           />
@@ -81,6 +92,7 @@ const SearchExercises = () => {
               right: '0'
               
             }}
+            onClick={handleSearch}
           variant="contained" 
           >
             Search
@@ -89,6 +101,6 @@ const SearchExercises = () => {
       </Box>
     </SearchContainer>
   );
-};
+
 
 export default SearchExercises;

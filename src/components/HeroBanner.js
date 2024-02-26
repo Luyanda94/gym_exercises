@@ -101,83 +101,98 @@ const HeroBanner = () => {
 
   return (
     <AnimatedContainer style={containerSpring}>
-      <BoxWithDebug>
-      <AnimatedTypography
-  color="primary"
-  fontWeight="600"
-  fontSize={{ lg: '36px', xs: '24px' }}  
-  style={{
-    ...textSpring,
-    marginTop: '20px',  
-    marginLeft: { lg: '200px', xs: '40px' }, 
-  }}
->
-  Level Up with<br />
-  Coach Lue
-</AnimatedTypography>
+  <BoxWithDebug>
+    <AnimatedTypography
+      color="primary"
+      fontWeight="600"
+      fontSize={{ lg: '46px', xs: '24px' }}
+      sx={{
+        marginLeft: { lg: '80px', xs: '40px' },
+        marginRight: { lg: '20px', xs: '10px' },
+      }}
+      style={{
+        ...textSpring,
+        marginTop: '20px',
+        marginLeft: { lg: '80px', xs: '80px' }, // Move text to the right
+      }}
+    >
+      Level Up with<br />
+      Coach Lue
+    </AnimatedTypography>
 
-        <AnimatedTypography
-          fontWeight={700}
-          sx={{
-            fontSize: { lg: '20px', xs: '14px' },  
-            marginLeft: { lg: '80px', xs: '40px' }, 
-            marginRight: { lg: '20px', xs: '10px' }, 
-            marginTop: '80px', 
-          }}
-          style={textSpring}
-          mb={10}
-        >
-          Your dedicated fitness Trainer. With my expertise in<br />
-          exercise and nutrition. I am here to help You<br />
-          reach your fitness goals. Let us start this journey<br />
-          together.
-        </AnimatedTypography>
+    <AnimatedTypography
+      fontWeight={700}
+      sx={{
+        fontSize: { lg: '20px', xs: '14px' },
+        marginLeft: { lg: '80px', xs: '40px' },
+        marginRight: { lg: '20px', xs: '10px' },
+        marginTop: '80px',
+      }}
+      style={textSpring}
+      mb={10}
+    >
+      Your dedicated fitness Trainer. With my expertise in<br />
+      exercise and nutrition. I am here to help You<br />
+      reach your fitness goals. Let us start this journey<br />
+      together.
+    </AnimatedTypography>
 
+    <Box style={{ position: 'relative', width: '100%' }}>
+      <AnimatedImage
+        src={HeroBannerImage}
+        alt="Coach Lue"
+        className="hero-banner-img"
+        style={{
+          ...buttonSpring,
+          borderRadius: '10px',
+        }}
+      />
+    </Box>
+    <Typography
+      fontWeight={600}
+      color="#ff2625"
+      sx={{
+        opacity: 0.1,
+        display: { lg: 'block', xs: 'none' },
+      }}
+      fontSize="150px"
+    >
+      EXERCISE WITH US
+    </Typography>
 
-        <Box style={{ position: 'relative', width: '100%' }}>
-          <AnimatedImage
-            src={HeroBannerImage}
-            alt="Coach Lue"
-            className="hero-banner-img"
-            style={{
-              ...buttonSpring,
-              borderRadius: '10px',
-            }}
-          />
-        </Box>
-        <Typography
-          fontWeight={600}
-          color="#ff2625"
-          sx={{
-            opacity: 0.1,
-            display: { lg: 'block', xs: 'none' },
-          }}
-          fontSize="150px">
-          EXERCISE WITH US
-        </Typography>
-        <AnimatedButton
-          href="#admin"
-          style={{
-            ...buttonSpring,
-            backgroundColor: '#00acc1',
-            color: '#fff'
-          }}
-        >
-          Admin
-        </AnimatedButton>
-        <Box display="flex"></Box>
-        <AnimatedButton
-          href="#admin"
-          style={{
-            ...buttonSpring,
-            backgroundColor: '#00acc1',
-            color: '#fff'
-          }}
-        >
-          Join
-        </AnimatedButton>
-      </BoxWithDebug>
-    </AnimatedContainer>
+    {/* Separate the Box with buttons from the main BoxWithDebug */}
+    <Box display="flex"
+    sx={{
+      marginTop: '10px',
+      marginRight: { lg: '20px', xs: '10px' },
+      marginLeft: { lg: '80px', xs: '40px' },
+
+    }}>
+      <AnimatedButton
+        href="#admin"
+        style={{
+          ...buttonSpring,
+          backgroundColor: '#00acc1',
+          color: '#fff',
+          marginRight: '10px',
+        }}
+      >
+        Admin
+      </AnimatedButton>
+      <AnimatedButton
+        href="#admin"
+        style={{
+          ...buttonSpring,
+          backgroundColor: '#00acc1',
+          color: '#fff',
+        }}
+      >
+        Join
+      </AnimatedButton>
+    </Box>
+  </BoxWithDebug>
+</AnimatedContainer>
+
   );
 };
 

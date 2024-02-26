@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Box, TextField, Stack, Typography, Button } from '@mui/material';
 import styled from 'styled-components';
 import { exerciseOptions, fetchData } from '../utils/fecthData';
-import HorizontalScrollbar from './AboutHorizontalScrollbar';
+import HorizontalScrollbar from './HorizontalScrollbar';
 
 const SearchContainer = styled(Stack)`
   width: 100%;

@@ -12,11 +12,20 @@ import Join from '../components/Join';
 import Contact from '../components/Contact';
 
 const Home = () => {
+  const [bodyPart, setBodyPart] = useState('all');
+  const[exercises, setExercises] = useState([]);
+
   return (
     <Box>
       <HeroBanner />
-      <SearchExercises />       
-      <Exercises />
+      <SearchExercises 
+      setExercises={setExercises}
+      bodyPart={bodyPart} 
+      setBodyPart={setBodyPart}/>       
+      <Exercises 
+      setExercises={setExercises}
+      bodyPart={bodyPart} 
+      setBodyPart={setBodyPart}/>
       <About />
       <Admin /> 
       <Join />

@@ -106,10 +106,14 @@ const HeroBanner = () => {
           Level Up with<br />
           Coach Lue
         </AnimatedTypography>
-        
+
         <AnimatedTypography
           fontWeight={700}
-          sx={{ fontSize: { lg: '20px', xs: '10px' } }}
+          sx={{
+            fontSize: { lg: '20px', xs: '14px' },  // Adjusted font size for responsiveness
+            marginLeft: { lg: '80px', xs: '40px' }, // Move text to the right
+            marginRight: { lg: '20px', xs: '10px' }, // Add right margin
+          }}
           style={textSpring}
           mb={10}
         >
@@ -126,20 +130,20 @@ const HeroBanner = () => {
             className="hero-banner-img"
             style={{
               ...buttonSpring,
-              borderRadius: '10px', 
+              borderRadius: '10px',
             }}
           />
         </Box>
-            <Typography
-            fontWeight= {600}
-            color="#ff2625"
-            sx={{
-              opacity: 0.1,
-              display: { lg: 'block', xs: 'none' },
-            }}
-            fontSize="150px">
-              EXERCISE WITH US
-            </Typography>
+        <Typography
+          fontWeight={600}
+          color="#ff2625"
+          sx={{
+            opacity: 0.1,
+            display: { lg: 'block', xs: 'none' },
+          }}
+          fontSize="150px">
+          EXERCISE WITH US
+        </Typography>
         <AnimatedButton
           href="#admin"
           style={{
@@ -150,7 +154,7 @@ const HeroBanner = () => {
         >
           Admin
         </AnimatedButton>
-            
+        <Box display="flex"></Box>
         <AnimatedButton
           href="#admin"
           style={{

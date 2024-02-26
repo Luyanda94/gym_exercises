@@ -105,11 +105,11 @@ const HeroBanner = () => {
       <AnimatedTypography
   color="primary"
   fontWeight="600"
-  fontSize={{ lg: '36px', xs: '24px' }}  // Adjusted font size for responsiveness
+  fontSize={{ lg: '36px', xs: '24px' }}  
   style={{
     ...textSpring,
-    marginTop: '20px',  // Keep a small margin from the previous text
-    marginLeft: { lg: '80px', xs: '40px' }, // Move text to the right
+    marginTop: '20px',  
+    marginLeft: { lg: '200px', xs: '40px' }, 
   }}
 >
   Level Up with<br />
@@ -122,7 +122,7 @@ const HeroBanner = () => {
             fontSize: { lg: '20px', xs: '14px' },  
             marginLeft: { lg: '80px', xs: '40px' }, 
             marginRight: { lg: '20px', xs: '10px' }, 
-            marginTop: '80px', // Move text down
+            marginTop: '80px', 
           }}
           style={textSpring}
           mb={10}

@@ -102,17 +102,27 @@ const HeroBanner = () => {
   return (
     <AnimatedContainer style={containerSpring}>
       <BoxWithDebug>
-        <AnimatedTypography color="primary" fontWeight="600" fontSize="36px" style={textSpring}>
-          Level Up with<br />
-          Coach Lue
-        </AnimatedTypography>
+      <AnimatedTypography
+  color="primary"
+  fontWeight="600"
+  fontSize={{ lg: '36px', xs: '24px' }}  // Adjusted font size for responsiveness
+  style={{
+    ...textSpring,
+    marginTop: '20px',  // Keep a small margin from the previous text
+    marginLeft: { lg: '80px', xs: '40px' }, // Move text to the right
+  }}
+>
+  Level Up with<br />
+  Coach Lue
+</AnimatedTypography>
 
         <AnimatedTypography
           fontWeight={700}
           sx={{
-            fontSize: { lg: '20px', xs: '14px' },  // Adjusted font size for responsiveness
-            marginLeft: { lg: '80px', xs: '40px' }, // Move text to the right
-            marginRight: { lg: '20px', xs: '10px' }, // Add right margin
+            fontSize: { lg: '20px', xs: '14px' },  
+            marginLeft: { lg: '80px', xs: '40px' }, 
+            marginRight: { lg: '20px', xs: '10px' }, 
+            marginTop: '80px', // Move text down
           }}
           style={textSpring}
           mb={10}
@@ -122,6 +132,7 @@ const HeroBanner = () => {
           reach your fitness goals. Let us start this journey<br />
           together.
         </AnimatedTypography>
+
 
         <Box style={{ position: 'relative', width: '100%' }}>
           <AnimatedImage
